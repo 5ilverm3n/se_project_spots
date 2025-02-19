@@ -1,0 +1,15 @@
+.overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.overflow--single {
+  white-space: nowrap;
+}
+
+.overflow--multi {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
