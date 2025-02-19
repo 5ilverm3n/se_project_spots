@@ -27,6 +27,7 @@ This project is made so all the elements are displayed correctly on popular scre
 Here is url: (https://github.com/5ilverm3n/se_project_spots)
 
 **Images**
+<img src="./images/screen shot project 3.jpg"/>
 
 **Plan on improving the project**
 
