@@ -9,9 +9,6 @@
 
 .profile__avatar {
   border-radius: 8px;
-}
-
-.profile__avatar-image {
   width: 190px;
   height: 190px;
   border-radius: 8px;
@@ -29,6 +26,11 @@
   margin: 0 0 12px;
   font-weight: 500;
   max-width: 420px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__about {
@@ -39,18 +41,23 @@
   margin: 0 0 18px;
   flex-grow: 1;
   max-width: 420px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .profile__edit {
   display: flex;
   gap: 8px;
 }
-.profile__container-button {
+.profile__button {
   display: flex;
   align-items: flex-end;
 }
-.profile__button-edit {
+.profile__edit-button {
   background-color: transparent;
-  background-image: url("../images/pen\ icon.svg");
+  background-image: url("../images/penicon.svg");
   background-position: left;
   background-repeat: no-repeat;
   padding: 0;
@@ -61,9 +68,10 @@
   width: 108px;
   text-align: right;
   transition: opacity 0.25s ease-in-out;
+  cursor: pointer;
 }
 
-.profile__button-add {
+.profile__add-button {
   background-color: #212121;
   height: 52px;
   max-width: 157px;
@@ -74,6 +82,8 @@
   flex-grow: 1;
   align-self: flex-end;
   margin-left: auto;
+  cursor: pointer;
+  border: none;
 }
 
 .profile__add-icon {
@@ -82,11 +92,11 @@
   margin-right: 8px;
 }
 
-.profile__button-edit:hover {
+.profile__edit-button:hover {
   opacity: 100%;
 }
 
-.profile__button-add:hover {
+.profile__add-button:hover {
   opacity: 80%;
 }
 
@@ -100,6 +110,7 @@
   .profile__avatar-image {
     width: 80px;
     height: 80px;
+    position: center;
   }
   .profile__name {
     font-size: 20px;
@@ -120,8 +131,9 @@
     gap: 20px;
     flex-grow: 1;
     align-items: center;
+    cursor: pointer;
   }
-  .profile__button-add {
+  .profile__add-button {
     height: 52px;
     min-width: calc(100vw - 32px);
     flex-grow: 1;

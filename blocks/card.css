@@ -19,21 +19,26 @@
   font-size: 20px;
   font-weight: 500;
   max-width: 353px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
 }
-.card__button-like {
+.card__like-button {
   height: 20px;
   width: 23px;
-  background-image: url("../images/like\ icon.svg");
+  background-image: url("../images/likeiconUnion.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
   border: none;
   transition: opacity 0.25s ease-in-out;
   align-self: flex-end;
-  opacity: 40%;
+  opacity: 0.4;
+  cursor: pointer;
 }
 
-.card__button-like:hover {
+.card__like-button:hover {
   opacity: 100%;
 }
 
