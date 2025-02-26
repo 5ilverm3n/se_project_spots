@@ -24,9 +24,12 @@ This project is made so all the elements are displayed correctly on popular scre
 - Response Design
 
 **Deployed Github Page**
+
 Here is url: (https://5ilverm3n.github.io/se_project_spots/)
 
 **Video**
+
+Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
 
 **Images**
 <img src="./images/screen shot project 3.jpg"/>
