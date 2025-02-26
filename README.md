@@ -31,8 +31,12 @@ Here is url: (https://5ilverm3n.github.io/se_project_spots/)
 
 Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
 
-**Images**
+**Image**
+
 <img src="./images/screen shot project 3.jpg"/>
+
+
+
 
 **Plan on improving the project**
 
