@@ -26,7 +26,8 @@
 - Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
 
 **Image**
-Here is url: (https://drive.google.com/file/d/1piacIk3O6c1XQyRWGOWwHAVArpvFHWX2/view)
+
+- Here is url: (https://drive.google.com/file/d/1piacIk3O6c1XQyRWGOWwHAVArpvFHWX2/view)
 
 **Plan on improving the project**
 - Working buttons
