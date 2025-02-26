@@ -9,7 +9,7 @@
 
 **Intro**
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+- This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
 
 **Figma**
 
@@ -25,18 +25,15 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Deployed Github Page**
 
-Here is url: (https://5ilverm3n.github.io/se_project_spots/)
+-  Here is url: (https://5ilverm3n.github.io/se_project_spots/)
 
 **Video**
 
-Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
+- Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
 
 **Image**
 
 <img src="./images/screen shot project 3.jpg"/>
-
-
-
 
 **Plan on improving the project**
 
