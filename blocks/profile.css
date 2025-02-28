@@ -3,7 +3,7 @@
   font-weight: 500;
   line-height: 1;
   gap: 20px;
-  padding: 34px 0 20px;
+  padding: 20px 0;
   border-bottom: 1px solid rgb(33, 33, 33, 0.4);
 }
 
@@ -109,7 +109,7 @@
   .profile {
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 0;
     gap: 12px;
   }
 
