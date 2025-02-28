@@ -23,6 +23,7 @@
   overflow: hidden;
   white-space: nowrap;
   line-height: 1.2;
+  color: #212121;
 
 }
 .card__like-button {
