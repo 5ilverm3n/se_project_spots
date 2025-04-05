@@ -29,18 +29,15 @@
             />
           </div>
           <div class="profile__details">
-            <h1 class="profile__name">
-              Bessie Coleman
-            </h1>
-            <h2 class="profile__about">
-              Civil Aviator
-            </h2>
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <h2 class="profile__about">Civil Aviator</h2>
             <div class="profile__button">
               <button class="profile__edit-button">Edit Profile</button>
               <button
                 class="profile__add-button"
                 aria-label="Add a new post button"
                 type="button"
+                id="add-button"
               >
                 <img
                   src="./images/add icon.svg"
@@ -52,116 +49,108 @@
           </div>
         </section>
         <section class="cards">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/PIC_1_pexels-kassandre-pedro-8639743.svg"
-                alt="View of buildings adjacent to a ski resort"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  Val Thorens
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/PIC_2_pexels-kassandre-pedro-8639743.svg"
-                alt="View of a restaurant with seating on the street"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  Restaurant terrace
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/PIC_3_pexels-kassandre-pedro-8639743.svg"
-                alt="View of tables and chairs with people eating"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  An outdoor cafe
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/PIC_4_pexels-kassandre-pedro-8639743.svg"
-                alt="A long suspended bridge over a forest"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  A very long bridge, over the forest in Germany
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/PIC_5_pexels-kassandre-pedro-8639743.svg"
-                alt="Man walking down a tunnel with lots of windows"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  Tunnel with morning light
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/PIC_6_pexels-kassandre-pedro-8639743.svg"
-                alt="A cabin in the woods on a snowy day"
-                class="card__image"
-              />
-              <div class="card__textbox">
-                <h2 class="card__text">
-                  Mountain House
-                </h2>
-                <button
-                  class="card__like-button"
-                  aria-label="Like Button"
-                  type="button"
-                ></button>
-              </div>
-            </li>
-          </ul>
+          <div class="cards__wrapper">
+            <ul class="cards__list">
+              <li class="card">
+                <img
+                  src="./images/PIC_1_pexels-kassandre-pedro-8639743.svg"
+                  alt="View of buildings adjacent to a ski resort"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">Val Thorens</h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/PIC_2_pexels-kassandre-pedro-8639743.svg"
+                  alt="View of a restaurant with seating on the street"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">Restaurant terrace</h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/PIC_3_pexels-kassandre-pedro-8639743.svg"
+                  alt="View of tables and chairs with people eating"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">An outdoor cafe</h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/PIC_4_pexels-kassandre-pedro-8639743.svg"
+                  alt="A long suspended bridge over a forest"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">
+                    A very long bridge, over the forest in Germany
+                  </h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/PIC_5_pexels-kassandre-pedro-8639743.svg"
+                  alt="Man walking down a tunnel with lots of windows"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">Tunnel with morning light</h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/PIC_6_pexels-kassandre-pedro-8639743.svg"
+                  alt="A cabin in the woods on a snowy day"
+                  class="card__image"
+                />
+                <div class="card__textbox">
+                  <h2 class="card__text">Mountain House</h2>
+                  <button
+                    class="card__like-button"
+                    aria-label="Like Button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+            </ul>
+          </div>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__text">2025 &copy ALI GUMUS SPOTS</p>
       </footer>
-      <div class="modal" id = "edit-modal">
+      <div class="modal" id="edit-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
             <img
@@ -172,19 +161,58 @@
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
-          <label for="name" class="modal__label">
-            Name
-            <input id="name" type="text" class="modal__input" placeholder="Type your name"/>
-          </label>
-          <label for="description" class="modal__label">
-            Description
-            <input id="description" type="text" class="modal__input" placeholder="Describe yourself"/>
-          </label>
-          <button type="submit" class="modal__save-btn">
-            Save
-          </button>
-        </form>
+            <label for="name" class="modal__label">
+              Name
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your name"
+              />
+            </label>
+            <label for="description" class="modal__label">
+              Description
+              <input
+                id="profile-description-input"
+                type="text"
+                class="modal__input"
+                placeholder="Describe yourself"
+              />
+            </label>
+            <button type="submit" class="modal__save-btn">Save</button>
+          </form>
         </div>
+      </div>
+    </div>
+    <div class="modal" id="add-post-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn" id="add-post-close-btn">
+          <img src="./images/blackX.svg" alt="close icon" class="modal__icon" />
+        </button>
+        <h2 class="modal__title">New Post</h2>
+        <form name="add-post-form" class="modal__form">
+          <label for="post-title" class="modal__label">
+            Image link
+            <input
+              id="post-title"
+              type="text"
+              class="modal__input"
+              placeholder="Paste a link to the image"
+              required
+            />
+          </label>
+          <label for="post-image" class="modal__label">
+            Caption
+            <input
+              id="post-image"
+              type="url"
+              class="modal__input"
+              placeholder="Type a caption for the image"
+              required
+            />
+          </label>
+          <button type="submit" class="modal__save-btn">Save</button>
+        </form>
       </div>
     </div>
     <script src="./scripts/index.js"></script>

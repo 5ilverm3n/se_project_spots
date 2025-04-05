@@ -1,35 +1,26 @@
-# Project 3: Spots
-### Overview
-- Intro
-- Figma
-- Project Features
-- Images
+# Project 4 Spots TripleTen
 
-**Intro**
-- This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones. :)
+This is my fourth project in the Software Engineering program at TripleTen. It was created using HTML,CSS and JS.
 
-**Figma**
-- Here is a Figma link: (https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+## Project Features
 
-**Project Features**
-- Flexbox
-- BEM
-- Grid
-- Hover Elements
-- Response Design
+- **Semantic HTML5**
+- **Flexbox**
+- **Positioning**
+- **Responsive WebPage**
+- **@Fonts**
+- **Media Queries for Mobile Devices**
 
-**Deployed Github Page**
- Here is url: (https://5ilverm3n.github.io/se_project_spots/)
+## Additional Features
 
-**Video**
+- Improved content rendering performance.
+- Enhanced responsiveness across different devices.
+- Optimized media queries for better display on various screen sizes.
 
-- Here is my url: (https://drive.google.com/file/d/1TnrWY1B1lzEyhmWQhoYL6ROOEyypZx-z/view)
+## Project Link
 
-**Image**
+[Visit the Project](https://5ilverm3n.github.io/se_project_spots/)
 
-- Here is url: (https://drive.google.com/file/d/1piacIk3O6c1XQyRWGOWwHAVArpvFHWX2/view)
+## Project Video
 
-**Plan on improving the project**
-- Working buttons
-- Add a User sign in flow
-- Ability to add and delete Photos
+[Watch the Project Video](https://drive.google.com/file/d/16n_zpkJNwTEqVBzSPwXOCpk7PC3GTz-s/view?usp=sharing)
