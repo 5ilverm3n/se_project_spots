@@ -26,86 +26,97 @@ const intialCards = [
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-button");
-
 const editModal = document.querySelector("#edit-modal");
-
 const editModalCloseButton = editModal.querySelector(".modal__close-btn");
-
 const editModalForm = editModal.querySelector(".modal__form");
-
 const profileNameEl = document.querySelector(".profile__name");
-
 const profileAboutEl = document.querySelector(".profile__about");
-
 const profileNameInput = editModal.querySelector("#profile-name-input");
-
 const profileAboutInput = editModal.querySelector("#profile-description-input");
 
-profileEditButton.addEventListener("click", function () {
-  profileNameInput.value = profileNameEl.textContent;
-  profileAboutInput.value = profileAboutEl.textContent;
-  editModal.classList.add("modal_opened");
-});
-
-function openModal() {
-  editModal.classList.add("modal_opened");
-}
-
-function closeModal() {
-  editModal.classList.remove("modal_opened");
-}
-
-profileEditButton.addEventListener("click", openModal);
-
-editModalCloseButton.addEventListener("click", closeModal);
-
-// Handle Edit Profile Form Submission
-editModalForm.addEventListener("submit", (event) => {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Update the profile name and about text on the page
-  profileNameEl.textContent = profileNameInput.value;
-  profileAboutEl.textContent = profileAboutInput.value;
-
-  // Close the modal
-  closeModal();
-});
-
-// Selectors for Add Post Modal
 const addPostButton = document.querySelector("#add-button");
 const addPostModal = document.querySelector("#add-post-modal");
 const addPostCloseButton = document.querySelector("#add-post-close-btn");
 const addPostForm = document.querySelector("form[name='add-post-form']");
 const cardsList = document.querySelector(".cards__list");
 
-// Open Add Post Modal
-addPostButton.addEventListener("click", () => {
-  addPostModal.classList.add("modal_opened");
+// Open Modal
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+  const firstInput = modal.querySelector("input");
+  if (firstInput) firstInput.focus();
+}
+
+// Close Modal
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}
+
+// Edit Profile Modal
+profileEditButton.addEventListener("click", () => {
+  profileNameInput.value = profileNameEl.textContent;
+  profileAboutInput.value = profileAboutEl.textContent;
+  openModal(editModal);
 });
 
-// Close Add Post Modal
-addPostCloseButton.addEventListener("click", () => {
-  addPostModal.classList.remove("modal_opened");
+editModalCloseButton.addEventListener("click", () => closeModal(editModal));
+
+editModalForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  profileNameEl.textContent = profileNameInput.value;
+  profileAboutEl.textContent = profileAboutInput.value;
+  closeModal(editModal);
 });
 
-// Handle Add Post Form Submission
+// Add Post Modal
+addPostButton.addEventListener("click", () => openModal(addPostModal));
+addPostCloseButton.addEventListener("click", () => closeModal(addPostModal));
+
 addPostForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const postTitle = document.querySelector("#post-title").value;
-  const postImage = document.querySelector("#post-image").value;
+  const postTitle = document.querySelector("#post-title").value.trim();
+  const postImage = document.querySelector("#post-image").value.trim();
 
-  // Create a new card object
-  const newCard = {
-    name: postTitle,
-    link: postImage,
-  };
+  if (!postTitle || !postImage) {
+    alert("Please fill out both fields.");
+    return;
+  }
 
-  // Add the new card to the cards list
+  const newCard = { name: postTitle, link: postImage };
   const newCardElement = getCardsElement(newCard);
   cardsList.prepend(newCardElement);
 
-  // Close the modal and reset the form
-  addPostModal.classList.remove("modal_opened");
+  closeModal(addPostModal);
   addPostForm.reset();
 });
+
+// Create Card Element
+function getCardsElement(card) {
+  const cardElement = document.createElement("li");
+  cardElement.classList.add("card");
+
+  const cardImage = document.createElement("img");
+  cardImage.classList.add("card__image");
+  cardImage.src = card.link;
+  cardImage.alt = card.name;
+
+  const cardTextbox = document.createElement("div");
+  cardTextbox.classList.add("card__textbox");
+
+  const cardText = document.createElement("h2");
+  cardText.classList.add("card__text");
+  cardText.textContent = card.name;
+
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("card__like-button");
+  likeButton.setAttribute("aria-label", "Like Button");
+  likeButton.type = "button";
+
+  cardTextbox.appendChild(cardText);
+  cardTextbox.appendChild(likeButton);
+  cardElement.appendChild(cardImage);
+  cardElement.appendChild(cardTextbox);
+
+  return cardElement;
+}

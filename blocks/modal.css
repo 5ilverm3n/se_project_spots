@@ -13,6 +13,8 @@
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
   padding: 0 20px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  position: fixed;
 }
 
 .modal_opened {
@@ -74,7 +76,6 @@
 
 .modal__input {
   padding: 16px 12px;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
