@@ -120,3 +120,8 @@ function getCardsElement(card) {
 
   return cardElement;
 }
+
+intialCards.forEach(function (item)  {
+  console.log(item.name);
+  console.log(item.link);
+});
