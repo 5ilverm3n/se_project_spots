@@ -52,15 +52,17 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-// Edit Profile Modal
+// Open Edit Profile Modal
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileNameEl.textContent;
   profileAboutInput.value = profileAboutEl.textContent;
-  openModal(editModal);
+  openModal(editModal); // Use openModal function
 });
 
+// Close Edit Profile Modal
 editModalCloseButton.addEventListener("click", () => closeModal(editModal));
 
+// Handle Edit Profile Form Submission
 editModalForm.addEventListener("submit", (event) => {
   event.preventDefault();
   profileNameEl.textContent = profileNameInput.value;
@@ -68,10 +70,15 @@ editModalForm.addEventListener("submit", (event) => {
   closeModal(editModal);
 });
 
-// Add Post Modal
-addPostButton.addEventListener("click", () => openModal(addPostModal));
+// Open Add Post Modal
+addPostButton.addEventListener("click", () => {
+  openModal(addPostModal); // Use openModal function
+});
+
+// Close Add Post Modal
 addPostCloseButton.addEventListener("click", () => closeModal(addPostModal));
 
+// Handle Add Post Form Submission
 addPostForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -121,7 +128,8 @@ function getCardsElement(card) {
   return cardElement;
 }
 
-intialCards.forEach(function (item)  {
-  console.log(item.name);
-  console.log(item.link);
+// Render Initial Cards
+intialCards.forEach(function (item) {
+  const cardElement = getCardsElement(item);
+  cardsList.appendChild(cardElement);
 });
