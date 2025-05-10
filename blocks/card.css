@@ -1,6 +1,9 @@
 .card {
   width: 100%;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .card__image {
   display: block;
@@ -24,8 +27,29 @@
   white-space: nowrap;
   line-height: 1.2;
   color: #212121;
-
 }
+
+.card__delete-button {
+  width: 32px;
+  height: 32px;
+  position: absolute; /* Position the button absolutely */
+  top: 8px; /* Adjust the distance from the top */
+  right: 8px; /* Adjust the distance from the right */
+  background-image: url("../images/trash.svg"); /* Use the SVG icon */
+  background-repeat: no-repeat; /* Prevent repeating the icon */
+  background-size: contain; /* Ensure the icon fits within the button */
+  background-color: transparent; /* Remove any background color */
+  border: none; /* Remove any border */
+  cursor: pointer; /* Show a pointer cursor on hover */
+
+  padding: 0; /* Remove any padding */
+}
+
+.card__delete-button:hover {
+  background-image: url("../images/trash=hover.svg");
+  opacity: 1;
+}
+
 .card__like-button {
   height: 20px;
   width: 23px;
@@ -38,6 +62,16 @@
   align-self: flex-end;
   opacity: 0.4;
   cursor: pointer;
+}
+
+.card__like-button_active {
+  background-image: url("../images/Union.svg");
+  opacity: 1;
+}
+
+.card__like-button_active:hover {
+  background-image: url("../images/union=hover.svg");
+  opacity: 0.4;
 }
 
 .card__like-button:hover {

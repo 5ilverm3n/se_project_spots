@@ -13,11 +13,7 @@
   <body>
     <div class="page">
       <header class="header">
-        <img
-          src="./images/logo.svg.svg"
-          alt="Spots Logo"
-          class="header__logo"
-        />
+        <img src="./images/logo.svg" alt="Spots Logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile">
@@ -41,7 +37,7 @@
               >
                 <img
                   src="./images/add-icon.svg"
-                  alt="Add icon"
+                  alt="Add a new post"
                   class="profile__add-icon"
                 />New Post
               </button>
@@ -50,118 +46,43 @@
         </section>
         <section class="cards">
           <div class="cards__wrapper">
-            <ul class="cards__list">
-              <li class="card">
-                <img
-                  src="./images/pic-1-pexels-kassandre-pedro-8639743.png"
-                  alt="View of buildings adjacent to a ski resort"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">Val Thorens</h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="card">
-                <img
-                  src="./images/pic-2-pexels-kassandre-pedro-8639743.png"
-                  alt="View of a restaurant with seating on the street"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">Restaurant terrace</h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="card">
-                <img
-                  src="./images/pic-3-pexels-kassandre-pedro-8639743.png"
-                  alt="View of tables and chairs with people eating"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">An outdoor cafe</h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="card">
-                <img
-                  src="./images/pic-4-pexels-kassandre-pedro-8639743.png"
-                  alt="A long suspended bridge over a forest"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">
-                    A very long bridge, over the forest in Germany
-                  </h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="card">
-                <img
-                  src="./images/pic-5-pexels-kassandre-pedro-8639743.png"
-                  alt="Man walking down a tunnel with lots of windows"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">Tunnel with morning light</h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-              <li class="card">
-                <img
-                  src="./images/pic-6-pexels-kassandre-pedro-8639743.png"
-                  alt="A cabin in the woods on a snowy day"
-                  class="card__image"
-                />
-                <div class="card__textbox">
-                  <h2 class="card__text">Mountain House</h2>
-                  <button
-                    class="card__like-button"
-                    aria-label="Like Button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-            </ul>
+            <ul class="cards__list"></ul>
           </div>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__text">2025 &copy ALI GUMUS SPOTS</p>
       </footer>
+      <template id="card-template">
+        <li class="card">
+          <button
+            class="card__delete-button"
+            type="button"
+            aria-label="Delete Card"
+          ></button>
+          <img class="card__image" alt="Card image" />
+          <div class="card__textbox">
+            <h2 class="card__text"></h2>
+            <button
+              class="card__like-button"
+              aria-label="Like Button"
+              type="button"
+            ></button>
+          </div>
+        </li>
+      </template>
       <div class="modal" id="edit-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
             <img
               src="./images/blackX.svg"
-              alt="close icon"
+              alt="Close modal"
               class="modal__icon"
             />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
-            <label id="name" class="modal__label">
+            <label for="profile-name-input" class="modal__label">
               Name
               <input
                 id="profile-name-input"
@@ -170,7 +91,7 @@
                 placeholder="Type your name"
               />
             </label>
-            <label id="description" class="modal__label">
+            <label for="profile-description-input" class="modal__label">
               Description
               <input
                 id="profile-description-input"
@@ -187,25 +108,29 @@
     <div class="modal" id="add-post-modal">
       <div class="modal__container">
         <button type="button" class="modal__close-btn" id="add-post-close-btn">
-          <img src="./images/blackX.svg" alt="close icon" class="modal__icon" />
+          <img
+            src="./images/blackX.svg"
+            alt="Close modal"
+            class="modal__icon"
+          />
         </button>
         <h2 class="modal__title">New Post</h2>
         <form name="add-post-form" class="modal__form">
-          <label for="post-title" class="modal__label">
+          <label for="post-image" class="modal__label">
             Image link
             <input
-              id="post-title"
-              type="text"
+              id="post-image"
+              type="url"
               class="modal__input"
               placeholder="Paste a link to the image"
               required
             />
           </label>
-          <label for="post-image" class="modal__label">
+          <label for="post-title" class="modal__label">
             Caption
             <input
-              id="post-image"
-              type="url"
+              id="post-title"
+              type="text"
               class="modal__input"
               placeholder="Type a caption for the image"
               required
@@ -215,6 +140,18 @@
         </form>
       </div>
     </div>
+    <!-- Preview Modal -->
+    <div class="modal" id="preview-modal">
+      <div class="modal__image-container">
+        <button
+          type="button"
+          class="modal__close-btn modal__close_type_image-preview"
+        ></button>
+        <img class="modal__image" src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" alt="" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+  </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

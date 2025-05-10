@@ -1,4 +1,9 @@
-const intialCards = [
+const initialCards = [
+  {
+    name: "Golden Gate Brich ",
+    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -39,6 +44,15 @@ const addPostModal = document.querySelector("#add-post-modal");
 const addPostCloseButton = document.querySelector("#add-post-close-btn");
 const addPostForm = document.querySelector("form[name='add-post-form']");
 const cardsList = document.querySelector(".cards__list");
+
+const previewModalCloseButton = document.querySelector(
+  "#modal__preview .modal__close-btn"
+);
+if (previewModalCloseButton) {
+  previewModalCloseButton.addEventListener("click", () => {
+    closeModal(document.querySelector("#modal__preview"));
+  });
+}
 
 // Open Modal
 function openModal(modal) {
@@ -100,36 +114,35 @@ addPostForm.addEventListener("submit", (event) => {
 
 // Create Card Element
 function getCardsElement(card) {
-  const cardElement = document.createElement("li");
-  cardElement.classList.add("card");
+  const template = document.querySelector("#card-template"); // Select the template
+  const cardElement = template.content.cloneNode(true); // Clone the template content
 
-  const cardImage = document.createElement("img");
-  cardImage.classList.add("card__image");
+  // Select the title and image elements from the cloned content
+  const cardImage = cardElement.querySelector(".card__image"); // Image element
+  const cardText = cardElement.querySelector(".card__text"); // Title element
+  // Removed unused likeButton declaration
+
+  // Populate the cloned elements with data
   cardImage.src = card.link;
   cardImage.alt = card.name;
-
-  const cardTextbox = document.createElement("div");
-  cardTextbox.classList.add("card__textbox");
-
-  const cardText = document.createElement("h2");
-  cardText.classList.add("card__text");
   cardText.textContent = card.name;
 
-  const likeButton = document.createElement("button");
-  likeButton.classList.add("card__like-button");
-  likeButton.setAttribute("aria-label", "Like Button");
-  likeButton.type = "button";
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-button_active");
+  });
 
-  cardTextbox.appendChild(cardText);
-  cardTextbox.appendChild(likeButton);
-  cardElement.appendChild(cardImage);
-  cardElement.appendChild(cardTextbox);
+  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtnEl.addEventListener("click", () => {
+    cardDeleteBtnEl.closest(".card").remove();
+  });
 
+  // Return the card element
   return cardElement;
 }
 
 // Render Initial Cards
-intialCards.forEach(function (item) {
+initialCards.forEach(function (item) {
   const cardElement = getCardsElement(item);
   cardsList.appendChild(cardElement);
 });
