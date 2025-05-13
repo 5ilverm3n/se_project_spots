@@ -134,7 +134,7 @@ function getCardsElement(card) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnEl.addEventListener("click", () => {
-    cardDeleteBtnEl.closest(".card").remove();
+    cardElement.remove();
   });
 
   // Return the card element
