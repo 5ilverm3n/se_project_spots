@@ -1,7 +1,7 @@
 const initialCards = [
   {
     name: "Golden Gate Brich ",
-    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 
   {
@@ -133,8 +133,11 @@ function getCardsElement(card) {
   });
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
-  cardDeleteBtnEl.addEventListener("click", () => {
-    cardElement.remove();
+  cardDeleteBtnEl.addEventListener("click", (event) => {
+    const cardToRemove = event.target.closest(".card");
+    if (cardToRemove) {
+      cardToRemove.remove();
+    }
   });
 
   // Return the card element
