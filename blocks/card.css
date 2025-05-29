@@ -11,7 +11,14 @@
   aspect-ratio: 1 /1;
   width: 100%;
   border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
 }
+
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__textbox {
   display: flex;
   justify-content: space-between;

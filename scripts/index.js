@@ -54,6 +54,8 @@ if (previewModalCloseButton) {
   });
 }
 
+const template = document.querySelector("#card-template"); // Select the template
+
 // Open Modal
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -112,15 +114,13 @@ addPostForm.addEventListener("submit", (event) => {
   addPostForm.reset();
 });
 
-// Create Card Element
+// Update getCardsElement to use the global template variable
 function getCardsElement(card) {
-  const template = document.querySelector("#card-template"); // Select the template
   const cardElement = template.content.cloneNode(true); // Clone the template content
 
   // Select the title and image elements from the cloned content
   const cardImage = cardElement.querySelector(".card__image"); // Image element
   const cardText = cardElement.querySelector(".card__text"); // Title element
-  // Removed unused likeButton declaration
 
   // Populate the cloned elements with data
   cardImage.src = card.link;
@@ -138,6 +138,19 @@ function getCardsElement(card) {
     if (cardToRemove) {
       cardToRemove.remove();
     }
+  });
+
+  // Add event listener to open the Preview modal
+  cardImage.addEventListener("click", () => {
+    const previewModal = document.querySelector("#preview-modal");
+    const modalImage = previewModal.querySelector(".modal__image");
+    const modalCaption = previewModal.querySelector(".modal__caption");
+
+    modalImage.src = card.link;
+    modalImage.alt = card.name;
+    modalCaption.textContent = card.name;
+
+    openModal(previewModal);
   });
 
   // Return the card element
