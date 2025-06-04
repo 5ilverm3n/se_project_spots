@@ -30,6 +30,7 @@ const initialCards = [
   },
 ];
 
+// DOM element queries (move to the top)
 const profileEditButton = document.querySelector(".profile__edit-button");
 const editModal = document.querySelector("#edit-modal");
 const editModalCloseButton = editModal.querySelector(".modal__close-btn");
@@ -45,14 +46,10 @@ const addPostCloseButton = document.querySelector("#add-post-close-btn");
 const addPostForm = document.querySelector("form[name='add-post-form']");
 const cardsList = document.querySelector(".cards__list");
 
-const previewModalCloseButton = document.querySelector(
-  "#modal__preview .modal__close-btn"
-);
-if (previewModalCloseButton) {
-  previewModalCloseButton.addEventListener("click", () => {
-    closeModal(document.querySelector("#modal__preview"));
-  });
-}
+const previewModal = document.querySelector("#preview-modal");
+const modalImage = previewModal.querySelector(".modal__image");
+const modalCaption = previewModal.querySelector(".modal__caption");
+const previewModalCloseButton = previewModal.querySelector(".modal__close-btn");
 
 const template = document.querySelector("#card-template"); // Select the template
 
@@ -140,16 +137,11 @@ function getCardsElement(card) {
     }
   });
 
-  // Add event listener to open the Preview modal
+  // Use the cached previewModal, modalImage, and modalCaption
   cardImage.addEventListener("click", () => {
-    const previewModal = document.querySelector("#preview-modal");
-    const modalImage = previewModal.querySelector(".modal__image");
-    const modalCaption = previewModal.querySelector(".modal__caption");
-
     modalImage.src = card.link;
     modalImage.alt = card.name;
     modalCaption.textContent = card.name;
-
     openModal(previewModal);
   });
 
@@ -162,3 +154,6 @@ initialCards.forEach(function (item) {
   const cardElement = getCardsElement(item);
   cardsList.appendChild(cardElement);
 });
+
+// Close Preview Modal (image modal)
+previewModalCloseButton.addEventListener("click", () => closeModal(previewModal));
